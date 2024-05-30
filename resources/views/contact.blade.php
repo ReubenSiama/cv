@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="mx-5 md:mx-auto md:container">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-20">
             <form action="{{ Route('contact') }}" method="POST"
-            class="bg-gray-100 p-4 rounded-lg">
+            class="bg-gray-100 p-10 rounded-lg">
                 @csrf
-                <h1 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-6">Contact</h1>
+                <h1 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-6">Contact Me</h1>
                 <div class="grid grid-cols-2 gap-6">
                     <div class="mb-6">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
@@ -27,6 +27,9 @@
                 </div>
                 <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
             </form>
+            <div class="p-10 text-2xl content-center">
+                Let's make waves together! Your ideas, questions, and dreams are the fuel that powers my passion. Whether you're pondering the next big thing or just want to say hello, I'm here and eager to hear from you. Every message is a spark that ignites possibility, so don't hesitate to drop me a line. Together, let's unlock the potential of collaboration and turn your visions into reality. Get in touch today and let's create something extraordinary!
+            </div>
         </div>
     </div>
 @endsection
