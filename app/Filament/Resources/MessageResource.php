@@ -32,15 +32,14 @@ class MessageResource extends Resource
                     ->icon(fn (Message $record) => $record->is_read ? 'heroicon-s-envelope-open' : 'heroicon-s-envelope'),
                 Tables\Columns\TextColumn::make('ip_address')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('user_agent')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime('m-d-Y H:i:s')
                     ->sortable(),
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
-            ]);
+            ])
+            ->defaultSort('created_at', 'desc');
     }
 
     public static function getPages(): array
