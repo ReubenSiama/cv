@@ -46,7 +46,8 @@ class SkillResource extends Resource
                     ->sortable(),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                ->modalWidth('md'),
                 Tables\Actions\DeleteAction::make(),
             ]);
     }

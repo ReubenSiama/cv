@@ -4,13 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
 use App\Models\Message;
+use App\Models\Setting;
+use App\Models\Skill;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        $about = Setting::where('key', 'about-me')->first();
+        $skills = Skill::all();
+        return view('home', compact('about', 'skills'));
     }
 
     public function about()
