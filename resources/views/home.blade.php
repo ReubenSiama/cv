@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-<div class="mx-5 md:container md:mx-auto mt-10">
+<div class="mx-5 md:container md:mx-auto my-10">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div class="col-span-1 text-center">
             <img src="{{ asset('storage/'.$about->image)}}" alt="{{ $about->title }}" class="object-contain mx-auto">
