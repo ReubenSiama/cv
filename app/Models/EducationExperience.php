@@ -19,6 +19,7 @@ class EducationExperience extends Model
         'content',
         'link',
         'location',
+        'order_column',
     ];
 
     protected $casts = [

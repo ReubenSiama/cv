@@ -24,34 +24,34 @@ class EducationExperienceResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Section::make()
-                ->schema([
-                    Forms\Components\Select::make('type')
-                    ->options(EnumsEducationExperience::class)
-                    ->default(EnumsEducationExperience::Experience)
-                    ->native(false)
-                    ->required(),
-                    Forms\Components\TextInput::make('title')
-                        ->required()
-                        ->maxLength(255),
-                    Forms\Components\TextInput::make('subtitle')
-                        ->maxLength(255)
-                        ->default(null),
-                    Forms\Components\DatePicker::make('start_date')
-                        ->required()
-                        ->native(false),
-                    Forms\Components\DatePicker::make('end_date')
-                        ->native(false),
-                    Forms\Components\TextInput::make('link')
-                        ->maxLength(255)
-                        ->default(null),
-                    Forms\Components\TextInput::make('location')
-                        ->maxLength(255)
-                        ->default(null)
-                        ->columnSpanFull(),
-                    Forms\Components\RichEditor::make('content')
-                        ->columnSpanFull(),
-                ])
-                ->columns(3),
+                    ->schema([
+                        Forms\Components\Select::make('type')
+                            ->options(EnumsEducationExperience::class)
+                            ->default(EnumsEducationExperience::Experience)
+                            ->native(false)
+                            ->required(),
+                        Forms\Components\TextInput::make('title')
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('subtitle')
+                            ->maxLength(255)
+                            ->default(null),
+                        Forms\Components\DatePicker::make('start_date')
+                            ->required()
+                            ->native(false),
+                        Forms\Components\DatePicker::make('end_date')
+                            ->native(false),
+                        Forms\Components\TextInput::make('link')
+                            ->maxLength(255)
+                            ->default(null),
+                        Forms\Components\TextInput::make('location')
+                            ->maxLength(255)
+                            ->default(null)
+                            ->columnSpanFull(),
+                        Forms\Components\RichEditor::make('content')
+                            ->columnSpanFull(),
+                    ])
+                    ->columns(3),
             ]);
     }
 
@@ -81,7 +81,9 @@ class EducationExperienceResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
-            ]);
+            ])
+            ->defaultSort('order_column')
+            ->reorderable('order_column');
     }
 
     public static function getPages(): array
