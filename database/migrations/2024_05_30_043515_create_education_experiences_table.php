@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('content')->nullable();
             $table->string('link')->nullable();
             $table->string('location')->nullable();
+            $table->integer('order_column')->default(0);
             $table->timestamps();
         });
     }
