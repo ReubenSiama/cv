@@ -7,7 +7,7 @@
     <title>{{ $title ?? 'Reuben Siama' }}</title>
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
-<body class="h-screen bg-[#151515] text-white">
+<body class="h-screen bg-black text-white">
     @include('layouts.navbar')
     <div class="flex flex-col min-h-full">
         @yield('content')

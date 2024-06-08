@@ -2,7 +2,7 @@
     $active = 'block py-2 px-3 text-orange-500 rounded md:p-0 dark:text-white md:dark:text-blue-500';
     $inactive = 'block py-2 px-3 text-white rounded md:border-0 md:hover:text-orange-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent';
 @endphp
-<nav class="bg-[#18181B] border-gray-200 dark:bg-gray-900">
+<nav class="bg-light-black border-gray-200 dark:bg-gray-900">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="{{ route('home') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
         <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">ReubenSiama</span>

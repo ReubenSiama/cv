@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
+use App\Models\EducationExperience;
 use App\Models\Message;
 use App\Models\Portfolio;
 use App\Models\Setting;
 use App\Models\Skill;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -15,7 +15,9 @@ class HomeController extends Controller
     {
         $about = Setting::where('key', 'about-me')->first();
         $skills = Skill::all();
-        return view('home', compact('about', 'skills'));
+        $educations = EducationExperience::education()->orderBy('order_column')->get();
+
+        return view('home', compact('about', 'skills', 'educations'));
     }
 
     public function about()
@@ -25,7 +27,9 @@ class HomeController extends Controller
 
     public function contact()
     {
-        return view('contact');
+        $contact = Setting::where('key', 'contact')->first();
+
+        return view('contact', compact('contact'));
     }
 
     public function storeContact(ContactRequest $request)
@@ -41,11 +45,14 @@ class HomeController extends Controller
     public function portfolios()
     {
         $portfolios = Portfolio::all();
+
         return view('portfolios', compact('portfolios'));
     }
 
     public function experiences()
     {
-        return view('experiences');
+        $experiences = EducationExperience::experience()->orderBy('order_column')->get();
+
+        return view('experiences', compact('experiences'));
     }
 }
