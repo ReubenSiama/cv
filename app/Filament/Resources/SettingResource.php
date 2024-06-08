@@ -21,23 +21,24 @@ class SettingResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Section::make()
-                ->schema([
-                    Forms\Components\TextInput::make('key')
-                    ->required()
-                    ->maxLength(255)
-                    ->unique(ignoreRecord: true),
-                Forms\Components\TextInput::make('title')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('subtitle')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\FileUpload::make('image')
-                    ->image(),
-                Forms\Components\RichEditor::make('value')
-                    ->columnSpanFull(),
-                ])
-                ->columns(3)
+                    ->schema([
+                        Forms\Components\TextInput::make('key')
+                            ->required()
+                            ->maxLength(255)
+                            ->unique(ignoreRecord: true)
+                            ->disabledOn('edit'),
+                        Forms\Components\TextInput::make('title')
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('subtitle')
+                            ->maxLength(255)
+                            ->default(null),
+                        Forms\Components\FileUpload::make('image')
+                            ->image(),
+                        Forms\Components\RichEditor::make('value')
+                            ->columnSpanFull(),
+                    ])
+                    ->columns(3),
             ]);
     }
 
