@@ -23,11 +23,11 @@ class SkillResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\FileUpload::make('icon')
-                    ->image()
-                    ->default(null),
                 Forms\Components\TextInput::make('percentage')
                     ->numeric()
+                    ->default(null),
+                Forms\Components\FileUpload::make('icon')
+                    ->image()
                     ->default(null),
             ])
             ->columns(1);
@@ -47,7 +47,7 @@ class SkillResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
-                ->modalWidth('md'),
+                    ->modalWidth('md'),
                 Tables\Actions\DeleteAction::make(),
             ]);
     }

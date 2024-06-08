@@ -6,13 +6,22 @@
             <img class="object-cover w-full rounded-t-lg md:rounded-none md:rounded-s-lg" src="{{ asset('storage/'.$portfolio->image) }}" alt="{{ $portfolio->title }}">
             <div class="col-span-2 flex flex-col justify-between p-4 leading-normal">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">
-                    {{ $portfolio->title }}
+                    <a target="blank" href="{{ $portfolio->link }}" class="hover:underline">
+                        {{ $portfolio->title }}
+                    </a>
                     <br>
                     <small class="text-sm font-normal">{{ $portfolio->subtitle }}</small>
                 </h5>
                 {!! $portfolio->content !!}
+                <br>
+                <div class="">
+                    Technologies:
+                    @foreach ($portfolio->technologies as $technology)
+                        <span class="bg-gray-700 text-white px-2 py-1 rounded-lg mr-2">{{ $technology }}</span>
+                    @endforeach
+                </div>
                 <div class="flex justify-between mt-4">
-                    <a target="blank" href="{{ $portfolio->link }}" class="text-orange-500 hover:underline">Visit the site</a>
+                    <a target="blank" href="{{ $portfolio->link }}" class="text-orange-500 hover:underline">Read More</a>
                 </div>
             </div>
         </div>
