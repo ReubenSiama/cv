@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
 use App\Models\Message;
+use App\Models\Portfolio;
 use App\Models\Setting;
 use App\Models\Skill;
 use Illuminate\Http\Request;
@@ -35,5 +36,16 @@ class HomeController extends Controller
         Message::create($data);
 
         return redirect()->route('contact')->with('success', 'Your message has been sent successfully!');
+    }
+
+    public function portfolios()
+    {
+        $portfolios = Portfolio::all();
+        return view('portfolios', compact('portfolios'));
+    }
+
+    public function experiences()
+    {
+        return view('experiences');
     }
 }

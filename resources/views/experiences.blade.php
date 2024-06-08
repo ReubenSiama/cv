@@ -1,4 +1,4 @@
 @extends('layouts.main')
 @section('content')
-    This is about page
+    This is experience page
 @endsection
