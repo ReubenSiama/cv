@@ -21,7 +21,7 @@
                     @endforeach
                 </div>
                 <div class="flex justify-between mt-4">
-                    <a target="blank" href="{{ $portfolio->link }}" class="text-orange-500 hover:underline">Read More</a>
+                    <a href="{{ route('portfolios.view', $portfolio->slug) }}" class="text-orange-500 hover:underline">Read More</a>
                 </div>
             </div>
         </div>

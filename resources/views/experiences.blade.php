@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-<div class="mx-5 md:container md:mx-auto mt-10">
+<div class="mx-4 md:container md:mx-auto mt-4">
     @foreach ($experiences as $experience)
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-light-black mb-4 p-4 rounded-md">
             <div class="col-span-1">
@@ -21,4 +21,5 @@
             </div>
         </div>
     @endforeach
+</div>
 @endsection

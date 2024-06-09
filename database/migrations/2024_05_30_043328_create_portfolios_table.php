@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('content')->nullable();
             $table->string('link')->nullable();
             $table->json('technologies')->nullable();
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

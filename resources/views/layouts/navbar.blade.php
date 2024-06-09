@@ -18,7 +18,7 @@
           <li class="{{ Route::is('home') ? $active : $inactive }}">
               <a href="/" >Home</a>
           </li>
-          <li class="{{ Route::is('portfolios') ? $active : $inactive }}">
+          <li class="{{ Route::is('portfolios*') ? $active : $inactive }}">
             <a href="{{ route('portfolios') }}">Portfolios</a>
           </li>
           <li class="{{ Route::is('experiences') ? $active : $inactive }}">

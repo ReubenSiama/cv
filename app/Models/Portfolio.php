@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Portfolio extends Model
 {
@@ -15,10 +17,26 @@ class Portfolio extends Model
         'image',
         'content',
         'link',
-        'technologies'
+        'technologies',
+        'slug',
     ];
 
     protected $casts = [
         'technologies' => 'array',
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public function title(): Attribute
+    {
+        return new Attribute(
+            set: fn ($value) => [
+                'title' => $value,
+                'slug' => Str::slug($value),
+            ],
+        );
+    }
 }

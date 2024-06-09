@@ -49,6 +49,11 @@ class HomeController extends Controller
         return view('portfolios', compact('portfolios'));
     }
 
+    public function view(Portfolio $portfolio)
+    {
+        return view('portfolio', compact('portfolio'));
+    }
+
     public function experiences()
     {
         $experiences = EducationExperience::experience()->orderBy('order_column')->get();
