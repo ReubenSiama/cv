@@ -12,26 +12,27 @@
         </div>
     </div>
 </div>
-<div class="bg-light-black">
-    <div class="mx-5 md:container md:mx-auto mt-10">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-[url('/public/images/comb.jpg')] bg-cover bg-no-repeat bg-center">
+    <div class="bg-black bg-opacity-80">
+        <div class="mx-5 md:container md:mx-auto">
             <div class="p-10 col-span-2">
                 <h1 class="text-2xl font-bold text-center mb-4">Skills</h1>
-                <table class="table w-full">
-                    @foreach ($skills as $skill)
-                    <tr>
-                        <td class="p-2">{{ $skill->name }}</td>
-                        <td>
-                            <div class="bg-green-500 px-5 text-center text-white" style="width: {{ $skill->percentage ?? 0 }}%">
-                                {{ $skill->percentage }}%
-                            </div>
-                        </td>
-                    </tr>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-10">
+                    @foreach ($skillsChunk as $skills)
+                        <table class="table w-full">
+                            @foreach($skills as $skill)
+                            <tr>
+                                <td style="width: 30%" class="p-2">{{ $skill->name }}</td>
+                                <td>
+                                    <div class="bg-green-500 px-5 text-center text-white rounded-lg" style="width: {{ $skill->percentage ?? 0 }}%">
+                                        {{ $skill->percentage }}%
+                                    </div>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </table>
                     @endforeach
-                </table>
-            </div>
-            <div class="hidden md:flex">
-                <img src="{{ asset('images/skills.png') }}" alt="skills" class="object-contain mx-auto">
+                </div>
             </div>
         </div>
     </div>
