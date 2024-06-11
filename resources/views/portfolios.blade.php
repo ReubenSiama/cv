@@ -12,7 +12,7 @@
                     <br>
                     <small class="text-sm font-normal">{{ $portfolio->subtitle }}</small>
                 </h5>
-                {!! $portfolio->content !!}
+                {{ $portfolio->short_description }}
                 <br>
                 <div class="">
                     Technologies:

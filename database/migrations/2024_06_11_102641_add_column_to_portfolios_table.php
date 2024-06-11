@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('portfolios', function (Blueprint $table) {
             $table->integer('order_column')->after('id')->default(0);
+            $table->string('short_description')->after('subtitle')->nullable();
         });
     }
 

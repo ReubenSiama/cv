@@ -31,7 +31,12 @@ class PortfolioResource extends Resource
                 Forms\Components\TextInput::make('link')
                     ->maxLength(255)
                     ->default(null),
-                    Forms\Components\RichEditor::make('content')
+                Forms\Components\Textarea::make('short_description')
+                    ->rows(3)
+                    ->maxLength(255)
+                    ->required()
+                    ->columnSpanFull(),
+                Forms\Components\RichEditor::make('content')
                     ->columnSpanFull(),
                 ])
                 ->columns(3)

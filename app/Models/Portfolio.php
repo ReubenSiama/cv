@@ -19,7 +19,8 @@ class Portfolio extends Model
         'link',
         'technologies',
         'slug',
-        'order_column'
+        'order_column',
+        'short_description',
     ];
 
     protected $casts = [
