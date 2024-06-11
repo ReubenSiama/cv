@@ -1,6 +1,10 @@
 {
+  "public/images/comb.jpg": {
+    "file": "assets/comb-DQuVtpwm.jpg",
+    "src": "public/images/comb.jpg"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-CtEB9P4X.css",
+    "file": "assets/app-D9xYtom0.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
