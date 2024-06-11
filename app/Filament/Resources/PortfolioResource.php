@@ -33,7 +33,7 @@ class PortfolioResource extends Resource
                     ->default(null),
                 Forms\Components\Textarea::make('short_description')
                     ->rows(3)
-                    ->maxLength(255)
+                    ->maxLength(1000)
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\RichEditor::make('content')
