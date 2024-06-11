@@ -62,7 +62,9 @@ class PortfolioResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
-            ]);
+            ])
+            ->defaultSort('order_column')
+            ->reorderable('order_column');
     }
 
     public static function getPages(): array
