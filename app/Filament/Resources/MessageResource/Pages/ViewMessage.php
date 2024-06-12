@@ -15,11 +15,10 @@ class ViewMessage extends ViewRecord
         return $this->record->subject;
     }
 
-    protected function mutateFormDataBeforeFill(array $data): array
+    public function mount(int|string $record): void
     {
-        if($data['is_read'] === false){
-            Message::find($data['id'])->update(['is_read' => true]);
-        }
-        return $data;
+        parent::mount($record);
+
+        $this->record->markAsRead();
     }
 }

@@ -18,4 +18,18 @@ class Message extends Model
         'ip_address',
         'user_agent',
     ];
+
+    protected $casts = [
+        'is_read' => 'boolean',
+    ];
+
+    public function scopeUnread($query)
+    {
+        return $query->where('is_read', false);
+    }
+
+    public function markAsRead()
+    {
+        $this->update(['is_read' => true]);
+    }
 }
