@@ -1,4 +1,7 @@
-@extends('layouts.main')
+@extends('layouts.main', [
+    'title' => $portfolio->title,
+    'description' => $portfolio->short_description,
+    ])
 @section('content')
 <div class="mx-4 md:mx-auto md:container mt-4">
     <a href="{{ route('portfolios') }}" class="text-orange-500">

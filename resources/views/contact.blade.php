@@ -1,4 +1,7 @@
-@extends('layouts.main')
+@extends('layouts.main', [
+    'title' => 'Contact',
+    'description' => 'Contact Reuben Siama for any inquiries or collaborations.'
+    ])
 
 @section('content')
     @if (session('success'))

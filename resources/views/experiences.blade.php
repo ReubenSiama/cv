@@ -1,4 +1,7 @@
-@extends('layouts.main')
+@extends('layouts.main', [
+    'title' => 'Experiences',
+    'description' => 'Reuben Siama\'s professional experiences. I have worked with various companies and organizations. I have experience in web development, mobile app development, and software development. I have experience in Laravel, Vue.js, Tailwind CSS, Flutter, and many more. I am a full-stack web developer. I am a mobile app developer. I am a software developer. I am Reuben Lalhmunsiama.'
+    ])
 @section('content')
 <div class="mx-4 md:container md:mx-auto mt-4">
     @foreach ($experiences as $experience)

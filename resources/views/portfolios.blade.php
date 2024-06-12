@@ -1,4 +1,7 @@
-@extends('layouts.main')
+@extends('layouts.main', [
+    'title' => 'Portfolios',
+    'description' => 'Reuben Siama\'s portfolio. I have worked on various projects. I have experience in web development, mobile app development, and software development. I have experience in Laravel, Vue.js, Tailwind CSS, Flutter, and many more. I am a full-stack web developer. I am a mobile app developer. I am a software developer. I am Reuben Lalhmunsiama.'
+    ])
 @section('content')
 <div class="mx-4 md:mx-auto md:container mt-4">
     @foreach ($portfolios as $portfolio)
