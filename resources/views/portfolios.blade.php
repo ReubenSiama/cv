@@ -15,10 +15,12 @@
                 {{ $portfolio->short_description }}
                 <br>
                 <div class="">
-                    Technologies:
-                    @foreach ($portfolio->technologies as $technology)
-                        <span class="bg-gray-700 text-white px-2 py-1 rounded-lg mr-2">{{ $technology }}</span>
-                    @endforeach
+                    <div class="py-4">
+                        Technologies:
+                        @foreach ($portfolio->technologies as $technology)
+                            <span class="bg-gray-700 text-white px-2 py-1 rounded-lg mr-2">{{ $technology }}</span>
+                        @endforeach
+                    </div>
                 </div>
                 <div class="flex justify-between mt-4">
                     <a href="{{ route('portfolios.view', $portfolio->slug) }}" class="text-orange-500 hover:underline">Read More</a>

@@ -12,7 +12,7 @@
         </div>
     </div>
 </div>
-<div class="bg-[url('/public/images/comb.jpg')] bg-cover bg-no-repeat bg-center">
+<div class="bg-[url('/public/images/comb-small.png')] bg-cover bg-no-repeat bg-center">
     <div class="bg-black bg-opacity-80">
         <div class="mx-5 md:container md:mx-auto">
             <div class="p-10 col-span-2">

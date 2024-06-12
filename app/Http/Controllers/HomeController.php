@@ -45,7 +45,7 @@ class HomeController extends Controller
 
     public function portfolios()
     {
-        $portfolios = Portfolio::all();
+        $portfolios = Portfolio::orderBy('order_column')->get();
 
         return view('portfolios', compact('portfolios'));
     }
