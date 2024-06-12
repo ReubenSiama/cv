@@ -6,9 +6,13 @@
             <img class="object-cover w-full rounded-t-lg md:rounded-none md:rounded-s-lg" src="{{ asset('storage/'.$portfolio->image) }}" alt="{{ $portfolio->title }}">
             <div class="col-span-2 flex flex-col justify-between p-4 leading-normal">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">
-                    <a target="blank" href="{{ $portfolio->link }}" class="hover:underline">
+                    @if ($portfolio->link)
+                        <a target="blank" href="{{ $portfolio->link }}" class="hover:underline">
+                            {{ $portfolio->title }}
+                        </a>
+                    @else
                         {{ $portfolio->title }}
-                    </a>
+                    @endif
                     <br>
                     <small class="text-sm font-normal">{{ $portfolio->subtitle }}</small>
                 </h5>
