@@ -20,9 +20,19 @@
                 <i class="text-sm text-gray-300">
                     {{ $experience->subtitle }}
                 </i>
-                {!! $experience->content !!}
+                <div id="portfolio-content">
+                    {!! $experience->content !!}
+                </div>
             </div>
         </div>
     @endforeach
 </div>
+
+<style>
+    #experience-content li{
+        list-style-type: disc;
+        list-style-position: inside;
+        padding: 5px;
+    }
+</style>
 @endsection
