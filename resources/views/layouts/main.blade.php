@@ -9,10 +9,10 @@
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
 <body class="h-screen bg-black text-white">
-    @include('layouts.navbar')
+    <x-navbar />
     <div class="flex flex-col min-h-full">
         @yield('content')
     </div>
-    @include('layouts.footer')
+    <x-footer />
 </body>
 </html>
