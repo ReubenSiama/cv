@@ -3,7 +3,7 @@
         @foreach ($socialSites as $socialSite)
             <li>
                 <a target="blank" href="{{ $socialSite->url }}" target="blank" class="hover:underline">
-                    <div class="h-14 w-14">
+                    <div class="h-10 w-10">
                         <img src="{{ asset('storage/'.$socialSite->icon) }}" alt="{{ $socialSite->name }}">
                     </div>
                 </a>
