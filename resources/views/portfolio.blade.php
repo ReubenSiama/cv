@@ -5,9 +5,9 @@
         ← Back    
     </a>
     <br>
-    <div class="text-center uppercase text-xl">
+    <h1 class="text-center uppercase text-2xl font-extrabold">
         {{ $portfolio->title }}
-    </div>
+    </h1>
     <br>
     <div class="mb-4">
         Technologies:
