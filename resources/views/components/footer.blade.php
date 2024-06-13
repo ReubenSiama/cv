@@ -1,4 +1,4 @@
-<footer class="bg-[#18181B] shadow bottom-0">
+<footer class="bg-light-black shadow bottom-0 pt-5">
     <ul class="flex flex-wrap items-center justify-center text-white gap-4">
         @foreach ($socialSites as $socialSite)
             <li>

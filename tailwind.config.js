@@ -10,7 +10,7 @@ export default {
     extend: {
       colors: {
         'black': '#151515',
-        'light-black': '#18181B',
+        'light-black': '#202020',
         'pencil': '#353839',
       }
     },
