@@ -4,6 +4,9 @@
     ])
 @section('content')
 <div class="mx-4 md:container md:mx-auto mt-4">
+    <h1 class="text-3xl font-bold text-center">
+        Experiences
+    </h1>
     @foreach ($experiences as $experience)
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-light-black mb-4 p-4 rounded-md">
             <div class="col-span-1 flex justify-between">
