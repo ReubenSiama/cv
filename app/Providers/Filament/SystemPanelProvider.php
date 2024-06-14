@@ -49,6 +49,7 @@ class SystemPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->favicon(asset('favicon.png'));
     }
 }
