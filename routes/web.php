@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Middleware\VisitorCountMiddleware;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(HomeController::class)
+    ->middleware(VisitorCountMiddleware::class)
     ->group(function () {
         Route::get('/', 'index')->name('home');
         Route::get('/contact', 'contact')->name('contact');
