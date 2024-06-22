@@ -13,7 +13,7 @@
     </button>
 </div>
 <script>
-    // setTimeout(() => {
-    //     document.getElementById('alert-border-3').style.display = 'none';
-    // }, 2000);
+    setTimeout(() => {
+        document.getElementById('alert-border-3').style.display = 'none';
+    }, 1500);
 </script>
