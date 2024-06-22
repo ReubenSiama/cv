@@ -13,12 +13,14 @@
             <div class="text-xl mb-6">{{ $about->subtitle }}</div>
             {!! $about->value !!}
             <br>
-            <a href="{{ route('portfolios') }}" class="px-4 py-2 bg-green-500 text-white rounded-lg mr-4 hover:bg-green-400">
-                Explore my work
-            </a>
-            <a href="{{ route('experiences')}}" class="underline hover:text-gray-300">
-                Dive into my career timeline and milestones.
-            </a>
+            <div class="md:flex md:content-center items-center grid text-center gap-4">
+                <a href="{{ route('portfolios') }}" class="px-4 py-2 bg-green-500 text-white rounded-lg mr-4 hover:bg-green-400">
+                    Explore my work
+                </a>
+                <a href="{{ route('experiences')}}" class="underline hover:text-gray-300">
+                    Dive into my career timeline and milestones.
+                </a>
+            </div>
         </div>
     </div>
 </div>
