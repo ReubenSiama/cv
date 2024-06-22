@@ -18,7 +18,7 @@
                     Explore my works
                 </a>
                 <a href="{{ route('experiences')}}" class="underline hover:text-gray-300">
-                    Dive into my career timeline and milestones.
+                    Dive into my career timeline and milestones
                 </a>
             </div>
         </div>
