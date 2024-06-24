@@ -33,7 +33,7 @@ class VisitorResource extends Resource
                     ->label('Lat / Long')
                     ->formatStateUsing(fn($record) => $record->latitude . ', ' . $record->longitude)
                     ->url(fn($record) => 'https://maps.google.com/?q=' . $record->latitude . ',' . $record->longitude)
-                    ->searchable(),
+                    ->openUrlInNewTab(),
                 Tables\Columns\TextColumn::make('visited_at')
                     ->label('Last Visit')
                     ->dateTime()
