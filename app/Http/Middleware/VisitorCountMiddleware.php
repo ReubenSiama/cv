@@ -7,6 +7,8 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+use function Laravel\Prompts\warning;
+
 class VisitorCountMiddleware
 {
     /**
@@ -23,6 +25,7 @@ class VisitorCountMiddleware
             'visited_route' => $request->path(),
         ];
         if($data['user_agent'] == '' || $data['user_agent'] == null){
+            info('User agent not found for IP: ' . $data['ip_address']);
             return abort(403, 'User agent not found');
         }
 
