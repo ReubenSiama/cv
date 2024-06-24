@@ -50,6 +50,7 @@ class SystemPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
+            ->maxContentWidth('full')
             ->favicon(asset('favicon.png'));
     }
 }
