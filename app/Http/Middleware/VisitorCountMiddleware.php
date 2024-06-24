@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Jobs\ProcessVisitor;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,10 +20,10 @@ class VisitorCountMiddleware
             'ip_address' => $request->ip(),
             'user_agent' => $request->userAgent(),
             'visited_at' => now(),
-            'visited_route' => $request->route()->getName(),
+            'visited_route' => $request->path(),
         ];
 
-        \App\Models\Visitor::create($data);
+        ProcessVisitor::dispatch($data);
 
         return $next($request);
     }
