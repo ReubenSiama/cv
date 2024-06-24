@@ -44,6 +44,13 @@ class MessageResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
             ])
+            ->filters([
+                Tables\Filters\SelectFilter::make('is_read')
+                    ->options([
+                        1 => 'Read',
+                        0 => 'Unread',
+                    ]),
+            ])
             ->defaultSort('created_at', 'desc');
     }
 

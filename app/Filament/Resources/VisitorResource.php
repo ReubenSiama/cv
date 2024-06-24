@@ -7,9 +7,11 @@ use App\Models\Visitor;
 use Filament\Infolists;
 use Filament\Infolists\Infolist;
 use App\Filament\Resources\VisitorResource\RelationManagers;
+use Filament\Forms\Components\DatePicker;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 
 class VisitorResource extends Resource
 {
@@ -46,6 +48,19 @@ class VisitorResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+            ])
+            ->filters([
+                Tables\Filters\Filter::make('visited_at')
+                ->form([
+                    DatePicker::make('visited_at_from')
+                    ->native(false),
+                    DatePicker::make('visited_at_to')
+                    ->native(false),
+                ])
+                ->query(function(Builder $query, array $data): Builder{
+                    return $query->when($data['visited_at_from'], fn($query, $from) => $query->whereDate('visited_at', '>=', $from))
+                        ->when($data['visited_at_to'], fn($query, $to) => $query->whereDate('visited_at', '<=', $to));
+                })
             ])
             ->defaultSort('visited_at', 'desc');
     }
