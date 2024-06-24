@@ -69,17 +69,6 @@ class VisitorResource extends Resource
     {
         return $infolist
             ->schema([
-                Infolists\Components\Section::make()
-                ->schema([
-                    Infolists\Components\Group::make([
-                        Infolists\Components\TextEntry::make('ip_address'),
-                        Infolists\Components\TextEntry::make('user_agent'),
-                        Infolists\Components\TextEntry::make('visited_at')
-                            ->label('Last Visit')
-                            ->date('d/m/Y H:i:sA'),
-                    ])
-                    ->columns(3),
-                ]),
                 Infolists\Components\Section::make('Location Details')
                 ->schema([
                     Infolists\Components\TextEntry::make('countryName'),
@@ -97,8 +86,18 @@ class VisitorResource extends Resource
                         Infolists\Components\TextEntry::make('areaCode'),
                         Infolists\Components\TextEntry::make('timezone'),
                 ])
-                ->columns(4),
+                ->columns(4)
+                ->columnSpan(2),
+                Infolists\Components\Section::make()
+                ->schema([
+                    Infolists\Components\TextEntry::make('ip_address'),
+                    Infolists\Components\TextEntry::make('user_agent'),
+                    Infolists\Components\TextEntry::make('visited_at')
+                        ->label('Last Visit')
+                        ->date('d/m/Y H:i:sA'),
+                ])
+                ->columnSpan(1),
             ])
-            ->columns(1);
+            ->columns(3);
     }
 }
