@@ -59,7 +59,7 @@ class VisitorResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageVisitors::route('/'),
+            'index' => Pages\ListVisitors::route('/'),
             'view' => Pages\ViewVisitor::route('/{record}'),
         ];
     }
