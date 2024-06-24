@@ -30,8 +30,9 @@ class VisitorResource extends Resource
                 Tables\Columns\TextColumn::make('cityName')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('latitude')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('longitude')
+                    ->label('Lat / Long')
+                    ->formatStateUsing(fn($record) => $record->latitude . ', ' . $record->longitude)
+                    ->url(fn($record) => 'https://maps.google.com/?q=' . $record->latitude . ',' . $record->longitude)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('visited_at')
                     ->label('Last Visit')
