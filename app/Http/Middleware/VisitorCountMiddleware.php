@@ -22,6 +22,9 @@ class VisitorCountMiddleware
             'visited_at' => now(),
             'visited_route' => $request->path(),
         ];
+        if($data['user_agent'] == '' || $data['user_agent'] == null){
+            return abort(403, 'User agent not found');
+        }
 
         ProcessVisitor::dispatch($data);
 
