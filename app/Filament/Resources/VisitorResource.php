@@ -78,14 +78,11 @@ class VisitorResource extends Resource
                         Infolists\Components\TextEntry::make('regionName'),
                         Infolists\Components\TextEntry::make('cityName'),
                         Infolists\Components\TextEntry::make('zipCode'),
-                        Infolists\Components\TextEntry::make('isoCode'),
-                        Infolists\Components\TextEntry::make('postalCode'),
                         Infolists\Components\TextEntry::make('latitude')
                             ->label('Lat / Long')
                             ->formatStateUsing(fn($record) => $record->latitude . ', ' . $record->longitude)
                             ->url(fn($record) => 'https://maps.google.com/?q=' . $record->latitude . ',' . $record->longitude)
                             ->openUrlInNewTab(),
-                        Infolists\Components\TextEntry::make('metroCode'),
                         Infolists\Components\TextEntry::make('areaCode'),
                         Infolists\Components\TextEntry::make('timezone'),
                 ])
