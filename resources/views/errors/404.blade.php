@@ -1,5 +1,5 @@
 @extends('layouts.master', [
-    'title' => 'Under Maintenance',
+    'title' => 'Page Not Found',
     'class' => 'items-center content-center'
     ])
 @section('body')
