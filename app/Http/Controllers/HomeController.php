@@ -15,10 +15,9 @@ class HomeController extends Controller
     {
         $about = Setting::where('key', 'about-me')->first();
         $skills = Skill::all();
-        $skillsChunk = $skills->chunk(ceil($skills->count() / 2));
         $educations = EducationExperience::education()->orderBy('order_column')->get();
 
-        return view('home', compact('about', 'skillsChunk', 'educations'));
+        return view('home', compact('about', 'skills', 'educations'));
     }
 
     public function about()

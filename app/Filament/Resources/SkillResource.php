@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\SkillResource\Pages;
+use App\Http\Enums\SkillLevel;
 use App\Models\Skill;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -26,6 +27,8 @@ class SkillResource extends Resource
                 Forms\Components\TextInput::make('percentage')
                     ->numeric()
                     ->default(null),
+                Forms\Components\Select::make('level')
+                    ->options(SkillLevel::class),
                 Forms\Components\FileUpload::make('icon')
                     ->image()
                     ->default(null),
@@ -41,6 +44,9 @@ class SkillResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('icon')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('level')
+                    ->formatStateUsing(fn($state) => ucwords($state->value))
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('percentage')
                     ->numeric()
                     ->sortable(),
