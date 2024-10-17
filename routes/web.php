@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Middleware\VisitorCountMiddleware;
+use App\Livewire\Calculation;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(HomeController::class)
@@ -14,3 +15,5 @@ Route::controller(HomeController::class)
         Route::get('/portfolios/{portfolio}', 'view')->name('portfolios.view');
         Route::get('/experiences', 'experiences')->name('experiences');
     });
+
+Route::get('/calculate', Calculation::class)->name('calculate');
