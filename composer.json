@@ -9,6 +9,7 @@
         "filament/filament": "^3.2",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
+        "spatie/laravel-markdown": "^2.5",
         "stevebauman/location": "^7.3"
     },
     "require-dev": {

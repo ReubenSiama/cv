@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\HomeController;
 use App\Http\Middleware\VisitorCountMiddleware;
 use App\Livewire\Calculation;
@@ -17,3 +18,8 @@ Route::controller(HomeController::class)
     });
 
 Route::get('/calculate', Calculation::class)->name('calculate');
+Route::controller(BlogPostController::class)
+    ->group(function () {
+        Route::get('/blog', 'index')->name('blog.index');
+        Route::get('/blog/{blogPost}', 'view')->name('blog.view');
+    });
