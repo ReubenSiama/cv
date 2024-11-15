@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\BlogPostResource\Pages;
+use App\Http\Enums\BlogStatus;
 use App\Models\BlogPost;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -37,6 +38,11 @@ class BlogPostResource extends Resource
                             ->required()
                             ->maxSize(2048)
                             ->rules(['image', 'max:2048']),
+                        Forms\Components\Radio::make('status')
+                            ->options(BlogStatus::class)
+                            ->default(BlogStatus::DRAFT)
+                            ->inline()
+                            ->inlineLabel(false),
                     ])
                     ->columnSpan(1),
                 Forms\Components\Section::make('Post')
@@ -60,6 +66,8 @@ class BlogPostResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('status')
+                    ->badge(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

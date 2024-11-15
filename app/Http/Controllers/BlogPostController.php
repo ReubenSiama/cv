@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Enums\BlogStatus;
 use App\Models\BlogPost;
 
 class BlogPostController extends Controller
 {
     public function index()
     {
-        $posts = BlogPost::latest()->get();
+        $posts = BlogPost::where('status', BlogStatus::PUBLISHED)
+            ->latest()
+            ->paginate(12);
 
         return view('blog.index', compact('posts'));
     }

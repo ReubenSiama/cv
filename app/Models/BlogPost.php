@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Enums\BlogStatus;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -18,6 +19,11 @@ class BlogPost extends Model
         'slug',
         'content',
         'cover_image',
+        'status',
+    ];
+
+    protected $casts = [
+        'status' => BlogStatus::class,
     ];
 
     public function getRouteKeyName(): string
