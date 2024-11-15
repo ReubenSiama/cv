@@ -3,21 +3,18 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\SavingConstraintResource\Pages;
-use App\Filament\Resources\SavingConstraintResource\RelationManagers;
 use App\Models\SavingConstraint;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class SavingConstraintResource extends Resource
 {
     protected static ?string $model = SavingConstraint::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-banknotes';
 
     public static function form(Form $form): Form
     {
@@ -45,7 +42,7 @@ class SavingConstraintResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
-                ->modalWidth('md'),
+                    ->modalWidth('md'),
                 Tables\Actions\DeleteAction::make(),
             ]);
     }
