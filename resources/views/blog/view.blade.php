@@ -36,12 +36,18 @@
 .reset-tw h4,
 .reset-tw h5,
 .reset-tw h6,
-.reset-tw code{
+.reset-tw code
+{
     all: revert;
 }
 
+.reset-tw a
+{
+    color: #2563EB;
+}
+
 .reset-tw code{
-    background-color: #a5a5a5;
+    background-color: #d3d3d3;
     padding: 0.20rem 0.2rem;
     border-radius: 0.25rem;
 }
@@ -54,6 +60,7 @@
 
 .prose .shiki {
     max-width: 100%;
+    max-height: 100%;
     overflow: scroll;
     padding: 1rem;
 }
