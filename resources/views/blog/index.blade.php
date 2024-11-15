@@ -7,14 +7,14 @@
     <h1 class="text-3xl font-bold mb-8 text-center">Blog Posts</h1>
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
         @forelse ($posts as $post)
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+        <div class="bg-[#181A1B] rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <img src="{{ asset('storage/'.$post->cover_image)}}" alt="{{ $post->title }}" class="w-full h-48 object-cover">
 
             <div class="p-6">
-                <h2 class="text-xl font-semibold text-gray-800">{{ $post->title }}</h2>
-                <h4 class="text-sm text-gray-600">{{ $post->subtitle }}</h4>
+                <h2 class="text-xl font-semibold text-[#CDC8C2]">{{ $post->title }}</h2>
+                <h4 class="text-sm text-[#B1AAA0]">{{ $post->subtitle }}</h4>
                 <p class="text-sm mb-4 text-black">
-                    <x-markdown class="text-black">
+                    <x-markdown class="text-[#CDC8C2]">
                         {!! $post->excerpt !!}
                     </x-markdown>
                 </p>

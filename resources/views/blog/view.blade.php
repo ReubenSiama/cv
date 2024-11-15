@@ -4,22 +4,22 @@
     ])
 @section('content')
 <div class="mx-5 md:container md:mx-auto my-10">
-    <div class="max-w-3xl mx-auto p-4 lg:p-10 bg-white shadow-lg rounded-lg">
+    <div class="max-w-3xl mx-auto p-4 lg:p-10 bg-[#181A1B] shadow-lg rounded-lg">
         @if($blogPost->cover_image)
             <img src="{{ asset('storage/'.$blogPost->cover_image) }}" alt="{{ $blogPost->title }}" class="w-full h-64 object-cover rounded-t-lg">
         @endif
     
         <div class="px-4 py-6">
-            <h1 class="text-4xl font-bold text-gray-800 mb-2">{{ $blogPost->title }}</h1>
+            <h1 class="text-4xl font-bold text-[#CDC8C2] mb-2">{{ $blogPost->title }}</h1>
     
             @if($blogPost->subtitle)
-                <h2 class="text-xl text-gray-600 mb-4">{{ $blogPost->subtitle }}</h2>
+                <h2 class="text-xl text-[#B1AAA0] mb-4">{{ $blogPost->subtitle }}</h2>
             @endif
     
-            <p class="text-sm text-gray-500 mb-6">{{ $blogPost->created_at->format('F j, Y') }}</p>
+            <p class="text-sm text-[#B1AAA0] mb-6">{{ $blogPost->created_at->format('F j, Y') }}</p>
     
             <div class="prose prose-lg max-w-none reset-tw">
-                <x-markdown class="text-black">
+                <x-markdown class="text-[#CDC8C2]">
                     {!! $blogPost->content !!}
                 </x-markdown>
             </div>
@@ -43,13 +43,19 @@
 
 .reset-tw a
 {
-    color: #2563EB;
+    color: #FF5A1F;
 }
 
 .reset-tw code{
-    background-color: #d3d3d3;
+    background-color: #24292E;
     padding: 0.20rem 0.2rem;
     border-radius: 0.25rem;
+}
+
+.prose ol,
+.prose ul {
+    list-style-type: revert;
+    margin-left: 15px;
 }
 
 .prose .shiki code{
