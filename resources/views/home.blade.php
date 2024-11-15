@@ -26,7 +26,7 @@
         </div>
     </div>
 </div>
-<div class="mx-5 md:container md:mx-auto">
+<div class="mx-5 md:container md:mx-auto mt-4">
     <h1 class="text-2xl font-bold text-center mb-4">My Skills</h1>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-10">
         @foreach ($skills as $skill)
