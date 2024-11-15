@@ -24,6 +24,9 @@
           <li class="{{ Route::is('experiences') ? $active : $inactive }}">
             <a href="{{ route('experiences') }}">Experiences</a>
           </li>
+          <li class="{{ Route::is('blog.*') ? $active : $inactive }}">
+            <a href="{{ route('blog.index') }}">Blog</a>
+          </li>
           <li class="{{ Route::is('contact') ? $active : $inactive }}">
             <a href="{{ Route('contact') }}">Contact</a>
           </li>
