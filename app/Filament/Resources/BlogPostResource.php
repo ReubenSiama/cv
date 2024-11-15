@@ -27,7 +27,6 @@ class BlogPostResource extends Resource
                             ->required()
                             ->maxLength(255),
                         Forms\Components\TextInput::make('subtitle')
-                            ->required()
                             ->maxLength(255),
                         Forms\Components\Select::make('tags')
                             ->preload()
