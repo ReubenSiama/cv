@@ -28,7 +28,7 @@
 </div>
 <div class="mx-5 md:container md:mx-auto mt-4">
     <h1 class="text-2xl font-bold text-center mb-4">My Skills</h1>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-10">
+    <div class="grid grid-cols-2 md:grid-cols-6 gap-4 md:gap-10">
         @foreach ($skills as $skill)
             <div class="p-10 bg-light-black rounded-xl hover:bg-[#2e2e2e]">
                 <img class="h-32 w-32 pb-10 object-contain mx-auto" src="{{ asset('storage/'.$skill->icon)}}" alt="{{ $skill->name }}">
