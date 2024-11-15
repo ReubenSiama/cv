@@ -33,8 +33,6 @@
         </div>
     </div>
 </div>
-@endsection
-
 <style>
 .reset-tw,
 .reset-tw h1,
@@ -107,3 +105,4 @@
 }
 
 </style>
+@endsection

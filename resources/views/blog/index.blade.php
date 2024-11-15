@@ -39,10 +39,10 @@
     <br>
     {{ $posts->links() }}
 </div>
-@endsection
-
 <style>
     nav[role="navigation"] div p {
         color: white;
     }
 </style>
+@endsection
+
