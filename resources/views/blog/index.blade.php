@@ -11,7 +11,8 @@
             <img src="{{ asset('storage/'.$post->cover_image)}}" alt="Post Image" class="w-full h-48 object-cover">
 
             <div class="p-6">
-                <h2 class="text-xl font-semibold mb-2 text-gray-800">{{ $post->title }}</h2>
+                <h2 class="text-xl font-semibold text-gray-800">{{ $post->title }}</h2>
+                <h4 class="text-sm text-gray-600">{{ $post->subtitle }}</h4>
                 <p class="text-sm mb-4 text-black">
                     <x-markdown class="text-black">
                         {!! $post->excerpt !!}
