@@ -6,7 +6,7 @@
 <div class="mx-5 md:container md:mx-auto my-10">
     <div class="max-w-3xl mx-auto p-4 lg:p-10 bg-white shadow-lg rounded-lg">
         @if($blogPost->cover_image)
-            <img src="{{ asset('storage/'.$blogPost->cover_image) }}" alt="Cover Image" class="w-full h-64 object-cover rounded-t-lg">
+            <img src="{{ asset('storage/'.$blogPost->cover_image) }}" alt="{{ $blogPost->title }}" class="w-full h-64 object-cover rounded-t-lg">
         @endif
     
         <div class="px-4 py-6">
