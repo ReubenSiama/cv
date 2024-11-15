@@ -13,6 +13,11 @@
             <div class="p-6">
                 <h2 class="text-xl font-semibold text-[#CDC8C2]">{{ $post->title }}</h2>
                 <h4 class="text-sm text-[#B1AAA0]">{{ $post->subtitle }}</h4>
+                <div>
+                    @foreach ($post->tags as $tag)
+                    <span class="inline-block bg-[#2D2D2D] rounded-full px-3 py-1 text-sm font-semibold text-[#CDC8C2] mr-2 mt-2">{{ $tag->name }}</span>
+                    @endforeach
+                </div>
                 <p class="text-sm mb-4 text-black">
                     <x-markdown class="text-[#CDC8C2]">
                         {!! $post->excerpt !!}

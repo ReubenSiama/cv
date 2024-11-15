@@ -15,9 +15,16 @@
             @if($blogPost->subtitle)
                 <h2 class="text-xl text-[#B1AAA0] mb-4">{{ $blogPost->subtitle }}</h2>
             @endif
-    
+
+            
             <p class="text-sm text-[#B1AAA0] mb-6">{{ $blogPost->created_at->format('F j, Y') }}</p>
-    
+            
+            <div>
+                @foreach ($blogPost->tags as $tag)
+                <span class="inline-block bg-[#2D2D2D] rounded-full px-3 py-1 text-sm font-semibold text-[#CDC8C2] mr-2 mt-2">{{ $tag->name }}</span>
+                @endforeach
+            </div>
+
             <div class="prose prose-lg max-w-none reset-tw">
                 <x-markdown class="text-[#CDC8C2]">
                     {!! $blogPost->content !!}
