@@ -18,10 +18,13 @@
                     <span class="inline-block bg-[#2D2D2D] rounded-full px-3 py-1 text-sm font-semibold text-[#CDC8C2] mr-2 mt-2">{{ $tag->name }}</span>
                     @endforeach
                 </div>
-                <p class="text-sm mb-4 text-black">
-                    <x-markdown class="text-[#CDC8C2]">
-                        {!! $post->excerpt !!}
-                    </x-markdown>
+                <p class="text-sm mb-4 text-[#CDC8C2]">
+                    @php
+                        $parsedown = new Parsedown();
+                        $parsedown->setSafeMode(true);
+                        $parsedown->setBreaksEnabled(true);
+                    @endphp
+                    {!! $parsedown->text($post->excerpt) !!}
                 </p>
 
                 <div class="flex items-center justify-between text-gray-500 text-xs">

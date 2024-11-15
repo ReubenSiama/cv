@@ -26,9 +26,13 @@
             </div>
 
             <div class="prose prose-lg max-w-none reset-tw">
-                <x-markdown class="text-[#CDC8C2]">
-                    {!! $blogPost->content !!}
-                </x-markdown>
+                @php
+                    $parsedown = new Parsedown();
+                    $parsedown->setSafeMode(true);
+                    $parsedown->setBreaksEnabled(true);
+                    $parsedown->setMarkupEscaped(true);
+                @endphp
+                {!! $parsedown->text($blogPost->content) !!}
             </div>
         </div>
     </div>
