@@ -27,7 +27,7 @@
             </div>
         </div>
         @empty
-        <p>No posts found.</p>
+        <p class="text-center">No posts found.</p>
         @endforelse
     </div>
     <br>
