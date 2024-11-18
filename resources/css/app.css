@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.prose :where(strong,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    @apply text-white;
+}
+
+.prose a {
+    @apply text-[#FF5A1F];
+    @apply no-underline;
+}
+
+.prose code:not(pre code)::before,
+.prose code:not(pre code)::after {
+    content: '';
+}
+
+.prose code:not(pre code) {
+    @apply bg-[#2D2D2D] text-[#CDC8C2] px-1 py-0.5 rounded;
+}
