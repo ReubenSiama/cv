@@ -11,6 +11,10 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-20">
             <form action="{{ Route('contact') }}" method="POST"
             class="rounded-lg bg-[url('/public/images/comb-small.png')] bg-center bg-no-repeat">
+                <div class="hidden">
+                    <label for="yourName">Leave this field blank:</label>
+                    <input type="text" name="yourName" id="yourName" />
+                </div>
                 <div class="bg-black bg-opacity-90 p-8 md:p-14 rounded-lg">
                     @csrf
                     <div class="grid grid-cols-2 gap-6">

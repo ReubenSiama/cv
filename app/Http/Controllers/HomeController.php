@@ -34,6 +34,11 @@ class HomeController extends Controller
 
     public function storeContact(ContactRequest $request)
     {
+        if ($request->yourName) {
+            info('You are a bot!');
+
+            return redirect()->route('contact')->with('error', 'You are a bot!');
+        }
         $data = $request->validated();
         $data['ip_address'] = $request->ip();
         $data['user_agent'] = $request->header('User-Agent');
