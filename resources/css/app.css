@@ -10,9 +10,22 @@
     h4,
     h5,
     h6,
-    th
-    ):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    th,
+    blockquote
+):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
     @apply text-white;
+}
+
+.prose :where(
+    [align="center"],
+){
+    @apply text-center;
+}
+
+.prose :where(
+    [align="right"],
+){
+    @apply text-right;
 }
 
 .prose a {
