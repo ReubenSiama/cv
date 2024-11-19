@@ -34,4 +34,20 @@
         </div>
     </div>
 </div>
+
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.esm.min.mjs';
+
+    async function initializeMermaid(){
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+        });
+        await mermaid.run({
+            nodes: document.querySelectorAll('.language-mermaid'),
+        });
+    }
+
+    initializeMermaid();
+</script>
 @endsection
