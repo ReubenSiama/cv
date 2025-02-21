@@ -9,7 +9,6 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
-use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -51,6 +50,9 @@ class SystemPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->maxContentWidth('full')
-            ->favicon(asset('favicon.png'));
+            ->favicon(asset('favicon.png'))
+            ->plugins([
+                \FilipFonal\FilamentLogManager\FilamentLogManager::make(),
+            ]);
     }
 }
